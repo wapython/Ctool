@@ -3,7 +3,7 @@
     "version": "2.3.0",
     "type": "module",
     "description": "程序开发常用工具 chrome / edge / firefox / utools / windows / linux / mac",
-    "homepage": "https://ctool.dev",
+    "homepage": ".",
     "repository": "https://github.com/baiy/Ctool",
     "author": "baiy",
     "license": "MIT",
@@ -15,7 +15,8 @@
         "release": "node release.cjs && pnpm run build && pnpm -r run platform-release",
         "only-release": "node release.cjs && pnpm -r run platform-release",
         "vercel-build": "pnpm run build && pnpm --filter ctool-site run build",
-        "clear": "node clear.cjs"
+        "clear": "node clear.cjs",
+        "deploy":"gh-pages -d _release"
     },
     "pnpm": {
         "peerDependencyRules": {
@@ -32,6 +33,7 @@
     },
     "dependencies": {
         "ctool-config": "workspace:*",
+        "gh-pages": "^6.2.0",
         "http-proxy": "^1.18.1"
     }
 }
